@@ -1,10 +1,12 @@
-class Building
-  attr_accessor :clients, :animals
+class Shelter
+  attr_accessor :shelter_name, :animals, :clients
 
   # initialize instance variables
-  def initialize(clients,animals)
-    @clients = clients
-    @animals = animals
+  def initialize(shelter_name)
+    @shelter_name = shelter_name
+    @animals = [ ]
+    @clients = [ ]
+    
   end
 
   # Returns an array. Each element is a tenant's contact info

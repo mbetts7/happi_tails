@@ -26,7 +26,6 @@ Make git commits as you finish each phase, so you can see the history.
 
 - The shelter should display all the clients.
 - The shelter should display all the animals.
-- The shelter should display all the animals.
 
 **Relationships:**  
 

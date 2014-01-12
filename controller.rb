@@ -2,7 +2,7 @@ require './shelter'
 require './animal'
 require './client'
 
-shelter = Shelter.new([], [])
+shelter = Shelter.new("Happi Tails")
 
 def menu message
   puts `clear`
@@ -33,7 +33,15 @@ while choice != 'q'
     message = 'Here are the clients with adopted animals'
     # Display all clients adopted
   when "3"
-    # create an animal and prompt for all instance variables needed
+    puts "Create an animal. Please enter the following information"
+    print "Name: "; animal_name = gets.chomp
+    print "Age: "; age = gets.to_i
+    print "Gender: "; gender = gets.chomp
+    print "Species: "; species = gets.chomp
+    print "How many toys does your pet have? "; num_toys = gets.to_i
+
+    shelter.animals << Animal.new(animal_name,age,gender,species,num_toys)
+    message = "Added animal #{shelter.animals.last.animal_name}"
   when "4"
     # create a client and prompt for all instance variables needed
   when "5"

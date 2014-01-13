@@ -4,9 +4,8 @@ class Shelter
   # initialize instance variables
   def initialize(shelter_name)
     @shelter_name = shelter_name
-    @animals = [ ]
-    @clients = [ ]
-    
+    @animals = []
+    @clients = []
   end
 
   # Displays list of animals and information about them.
@@ -23,9 +22,28 @@ class Shelter
       end
   end
 
-  # Does?
-  def animal_abandon
-    #implement
+  # Method for removing animal from database
+  def rm_animal(name)
+    @animals.each do |animal|
+      if animal.animal_name.capitalize == name.capitalize
+        return @animals.delete animal
+      end
+    end
+  end
+
+  # Method for accessing client info
+  def access_client(name)
+    @clients.each do |client|
+      return client if client.client_name.capitalize == name.capitalize
+    end
+  end
+
+  def has_animal?(name)
+    !@animals.select {|animal| animal.animal_name.capitalize == name.capitalize}.empty?
+  end
+
+  def has_client?(name)
+    !@clients.select {|client| client.client_name.capitalize == name.capitalize}.empty?
   end
 
 end

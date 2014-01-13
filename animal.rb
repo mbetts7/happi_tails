@@ -15,6 +15,10 @@ class Animal
     "\n\nname: #{animal_name}\n" + "species: #{species}\n" + "age: #{animal_age}\n" + "gender: #{gender}\n" + "number of toys: #{num_toys}"
   end
 
+  def to_s
+    "#{animal_name}: #{species}, #{gender}, #{animal_age}"
+  end
+
 def adopted?
    @client.nil?
   end

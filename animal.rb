@@ -3,7 +3,7 @@ class Animal
   attr_accessor :animal_name, :animal_age, :gender, :species, :num_toys
 
   # initialize instance variables
-  def initialize(animal_name,age,gender,species,num_toys)
+  def initialize(animal_name,animal_age,gender,species,num_toys)
     @animal_name = animal_name
     @animal_age = animal_age
     @gender = gender

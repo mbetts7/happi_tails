@@ -17,7 +17,7 @@ class Client
 
   def put_up_for_adoption(name)
     @pets.each do |pet|
-      if pet.name.capitalize == name.capitalize
+      if pet.animal_name.capitalize == name.capitalize
         return @pets.delete pet
       end
     end
@@ -28,7 +28,7 @@ class Client
   end
 
   def has_pet?(name)
-    !@pets.select {|pet| pet.name.capitalize == name.capitalize}.empty?
+    !@pets.select {|pet| pet.animal_name.capitalize == name.capitalize}.empty?
   end
 
 end

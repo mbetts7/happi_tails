@@ -22,7 +22,7 @@ class Shelter
       end
   end
 
-  # Method for removing animal from database
+  # Method for removing animal from database when they are adopted
   def rm_animal(name)
     @animals.each do |animal|
       if animal.animal_name.capitalize == name.capitalize
@@ -44,6 +44,10 @@ class Shelter
 
   def has_client?(name)
     !@clients.select {|client| client.client_name.capitalize == name.capitalize}.empty?
+  end
+
+  def add_animal(animal)
+    @animals << animal
   end
 
 end

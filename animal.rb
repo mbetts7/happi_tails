@@ -11,6 +11,10 @@ class Animal
     @num_toys = num_toys
   end
 
+  def get_animal_info
+    "name: #{animal_name} \n" + "species: #{species} \n" + "age: #{animal_age} \n" + "gender: #{gender} \n" + "number of toys: #{num_toys} \n"
+  end
+
 def adopted?
    @client.nil?
   end

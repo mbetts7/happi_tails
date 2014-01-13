@@ -11,22 +11,14 @@ class Shelter
 
   # Returns an array. Each element is a tenant's contact info
   def display_animals
-    #code
+      @animals.map do |animal|
+        animal.get_animal_info
+      end
   end
 
   # Returns the total sqft rented.
   def display_clients
       #code
-  end
-
-  # create an animal
-  def create_animal
-    # code
-  end
-
-  # Does?
-  def animal_adopt
-    #implement
   end
 
   # Does?

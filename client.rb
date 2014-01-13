@@ -8,7 +8,7 @@ class Client
     @num_children = num_children
     @client_age = client_age
     @num_pets = num_pets
-    @pets = []
+    @pets = {}
   end
 
   def get_client_info

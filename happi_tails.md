@@ -1,8 +1,8 @@
 #ISSUES/QUESTIONS
-- animal age not showing up
 - why do you need the ! on has_animal and has_client methods? and has pet?
 - when to use accessor/reader/writer
 - def menu message on controller
+- how to get pet names on line 86 of controller
 
 #Activity:
 

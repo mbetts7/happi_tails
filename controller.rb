@@ -83,7 +83,7 @@ while choice != 'q'
       shelter.clients.each do |client|
         if client.client_name.capitalize == client_name.capitalize
           puts "\nClient's pets"
-          puts client.get_client_info  # How to get pet name on this line???
+          puts client.pets  # How to get pet name on this line???... this works, but not clean.... puts client.get_client_info
           print "\nWhich pet will be put up for adoption? "
           pet_name = gets.chomp
           pet_condition = client.has_pet?(pet_name)

@@ -72,7 +72,7 @@ while choice != 'q'
         message += "#{client_name.capitalize} adopted #{animal_name.capitalize}"
       # Promp for client, and which animal
       else
-        message = "Error!!! Not a valid entry."
+        message = "ERROR!!! Not a valid entry."
       end
     when "6" # Facilitate client puts an animal up for adoption
       puts "\nCurrent clients with animals"

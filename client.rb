@@ -8,7 +8,7 @@ class Client
     @num_children = num_children
     @client_age = client_age
     @num_pets = num_pets
-    @pets = {}
+    @pets = []
   end
 
   def get_client_info
@@ -18,6 +18,7 @@ class Client
   def put_up_for_adoption(name)
     @pets.each do |pet|
       if pet.animal_name.capitalize == name.capitalize
+        @num_pets += -1
         return @pets.delete pet
       end
     end
@@ -25,6 +26,7 @@ class Client
 
   def adopt_animal(animal)
     @pets << animal
+    @num_pets += 1
   end
 
   def has_pet?(name)

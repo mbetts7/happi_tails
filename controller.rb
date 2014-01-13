@@ -33,17 +33,24 @@ while choice != 'q'
     message = 'Here are the clients with adopted animals'
     # Display all clients adopted
   when "3"
-    puts "Create an animal. Please enter the following information"
+    puts "Create an animal. Please enter the following information:"
     print "Name: "; animal_name = gets.chomp
-    print "Age: "; age = gets.to_i
+    print "Age: "; animal_age = gets.to_i
     print "Gender: "; gender = gets.chomp
     print "Species: "; species = gets.chomp
     print "How many toys does your pet have? "; num_toys = gets.to_i
 
-    shelter.animals << Animal.new(animal_name,age,gender,species,num_toys)
+    shelter.animals << Animal.new(animal_name,animal_age,gender,species,num_toys)
     message = "Added animal #{shelter.animals.last.animal_name}"
   when "4"
-    # create a client and prompt for all instance variables needed
+    puts "Create a new client. Please enter the following information:"
+    print "Name: "; client_name = gets.chomp
+    print "Age: "; client_age = gets.to_i
+    print "Number of children: "; num_children = gets.to_i
+    print "How many pets do you have? "; num_pets = gets.to_i
+
+    shelter.clients << Client.new(client_name,client_age,num_children,num_pets)
+    message = "Added client #{shelter.clients.last.client_name}"
   when "5"
     # Think through necessary steps for adoption and to shovel an animal onto a client
   when "6"

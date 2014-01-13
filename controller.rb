@@ -53,31 +53,31 @@ while choice != 'q'
     message = "Added client #{shelter.clients.last.client_name}"
   when "5"
     # Think through necessary steps for adoption and to shovel an animal onto a client
-  puts "Available clients to choose from:"
-  puts shelter.display_clients.join("\n")
-  print "\nWhich client wants to adopt a pet? [enter name of client] "
-  client_name = gets.chomp
-  puts "\nAvailable animals to choose from:"
-  puts shelter.display_animals
-  print "\nWhich animal does #{client_name} want to adopt? [enter name of animal] "
-  animal_name = gets.chomp
-  animal_condition = ""
-  shelter.clients.each do |client|
-    if client.client_name.capitalize == client_name.capitalize
-      animal_condition = shelter.has_animal?(animal_name)
-      client.adopt_animal(shelter.rm_animal(animal_name)) if shelter.has_animal?(animal_name)
+    puts "\nAvailable clients to choose from:"
+    print shelter.display_clients.join
+    print "\nWhich client wants to adopt a pet? [enter name of client] "
+    client_name = gets.chomp
+    puts "\nAvailable animals to choose from:"
+    puts shelter.display_animals
+    print "\nWhich animal does #{client_name} want to adopt? [enter name of animal] "
+    animal_name = gets.chomp
+    animal_condition = ""
+    shelter.clients.each do |client|
+      if client.client_name.capitalize == client_name.capitalize
+        animal_condition = shelter.has_animal?(animal_name)
+        client.adopt_animal(shelter.rm_animal(animal_name)) if shelter.has_animal?(animal_name)
+      end
     end
-  end
-    if animal_condition && shelter.has_client?(client_name)
-      puts "\nAnimal transaction occured"
-      message += "#{client_name.capitalize} has adopted #{animal_name.capitalize}"
-    # Promp for client, and which animal
-    else
-      message = "Error occurred during adoption process. Invalid client or animal."
-    end
-  when "6"
-    message += 'option 6'
-    # Think through necessary steps to put animal back in available animals and delete client?
+      if animal_condition && shelter.has_client?(client_name)
+        puts "\nAnimal transaction occured"
+        message += "#{client_name.capitalize} has adopted #{animal_name.capitalize}"
+      # Promp for client, and which animal
+      else
+        message = "Error occurred during adoption process. Invalid client or animal."
+      end
+    when "6"
+      message += 'option 6'
+      # Think through necessary steps to put animal back in available animals and delete client?
   else
       message += "I don't understand ..."
   end

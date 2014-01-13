@@ -9,16 +9,18 @@ class Shelter
     
   end
 
-  # Returns an array. Each element is a tenant's contact info
+  # Displays list of animals and information about them.
   def display_animals
       @animals.map do |animal|
         animal.get_animal_info
       end
   end
 
-  # Returns the total sqft rented.
+  # Returns list of clients and information about them.
   def display_clients
-      #code
+      @clients.map do |client|
+        client.get_client_info
+      end
   end
 
   # Does?

@@ -27,11 +27,11 @@ while choice != 'q'
   message = ""
   case choice
   when "1"
-    message = 'Here are the animals in the shelter:\\n'
-    message += "#{shelter.display_animals.join('\n')}"
+    message = 'Here are the animals in the shelter:'
+    message += "#{shelter.display_animals.join}\n"
   when "2"
-    message = 'Here are the clients with adopted animals'
-    # Display all clients adopted
+    message = 'Here are the clients:'
+    message += "#{shelter.display_clients.join}\n"
   when "3"
     puts "Create an animal. Please enter the following information:"
     print "Name: "; animal_name = gets.chomp

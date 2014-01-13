@@ -10,9 +10,8 @@ class Client
     @num_pets = num_pets
   end
 
-  # Returns the tenant's contact info (name and phone) as one string
-  def contact_info
-    "#{@name}: #{@phone}"  # CAN YOU PUT PUTS HERE?
+  def get_client_info
+    "\n\nname: #{client_name}\n" + "age: #{client_age}\n" + "number of children: #{num_children}\n" + "number of pets: #{num_pets}"
   end
 
 end
